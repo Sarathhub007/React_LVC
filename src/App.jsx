@@ -1,5 +1,7 @@
-import Calc from './Component/Calc'
-import NavBar from './Component/NavBar'
+// import Calc from './Component/Calc'
+import Demo1 from './Component/Demo1'
+import Demo2 from './Component/Demo2'
+// import NavBar from './Component/NavBar'
 
 function App() {
  
@@ -7,7 +9,10 @@ function App() {
   return (
     <>
   {/* <Calc/> */}
-  <NavBar/>
+  {/* <NavBar/>
+   */}
+   {/* <Demo1/> */}
+   <Demo2/>
   </>
 
   )
