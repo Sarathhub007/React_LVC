@@ -1,18 +1,25 @@
-// import Calc from './Component/Calc'
-import Demo1 from './Component/Demo1'
-import Demo2 from './Component/Demo2'
-// import NavBar from './Component/NavBar'
+
+import {Routes,Route} from "react-router-dom"
+import Home from "./Component/Pages/Home"
+import Login from "./Component/Pages/Login"
+import Register from "./Component/Pages/Register"
+import Dashboard from "./Component/Pages/Dashboard"
 
 function App() {
  
 
   return (
     <>
-  {/* <Calc/> */}
-  {/* <NavBar/>
-   */}
-   {/* <Demo1/> */}
-   <Demo2/>
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/login" element={<Login/>}/>
+      <Route path="/register" element={<Register/>}/>
+         <Route path="/dashboard" element={<Dashboard/>}/>
+
+
+     
+    </Routes>
+ 
   </>
 
   )
