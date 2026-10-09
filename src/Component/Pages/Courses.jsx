@@ -8,7 +8,7 @@ export default function Courses() {
   useEffect(() => {
     async function fetchCourses() {
       try {
-        const res = await fetch("/api/courses");
+        const res = await fetch("https://dummyjson.com/products");
 
         if (!res.ok) {
           throw new Error(`HTTP error: ${res.status}`);
@@ -16,7 +16,7 @@ export default function Courses() {
 
         const data = await res.json();
 
-        setCourses(data);
+        setCourses(data.products);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -32,11 +32,7 @@ export default function Courses() {
   }
 
   if (error) {
-    return (
-      <p style={{ color: "red" }}>
-        Error: {error}
-      </p>
-    );
+    return <p style={{ color: "red" }}>Error: {error}</p>;
   }
 
   return (
@@ -44,8 +40,15 @@ export default function Courses() {
       <h1>Courses</h1>
 
       {courses.map((course) => (
-        <div key={course.id}>
-          {course.title}
+       <div key={course.id}>
+          <img
+            src={course.thumbnail}
+            alt={course.title}
+            width="100"
+          />
+          <h3>{course.title}</h3>
+          <p>${course.price}</p>
+      
         </div>
       ))}
     </div>
