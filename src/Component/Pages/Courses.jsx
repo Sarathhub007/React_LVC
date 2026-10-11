@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 export default function Courses() {
@@ -8,13 +9,10 @@ export default function Courses() {
   useEffect(() => {
     async function fetchCourses() {
       try {
-        const res = await fetch("https://dummyjson.com/products");
+        const res = await axios.get("https://dummyjson.com/products");
 
-        if (!res.ok) {
-          throw new Error(`HTTP error: ${res.status}`);
-        }
-
-        const data = await res.json();
+     
+        const data = res.data;
 
         setCourses(data.products);
       } catch (err) {

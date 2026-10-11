@@ -12,7 +12,25 @@ import ProtectedRoute from "./Component/ProtectedRoute";
 import Unauthorized from "./Component/Pages/Unauthorized";
 import RoleRoute from "./Component/RoleRoute";
 import AdminDashboard from "./Component/Pages/AdminDashboard";
+
+// import { useState } from "react";
+// import Profile from "./Pratice/Profile";
+// import MessageForm from "./Pratice/MessageForm";
+// import AddItem from "./Pratice/AddItem";
+// import ItemList from "./Pratice/ItemList";
+
 function App() {
+
+  // const [items, setItems] = useState([]);
+  // function additems(newitems) {
+  //   setItems((previtems) => [...previtems, newitems]);
+  // }
+  // function deleteItems(delitem){
+  // setItems((previtems)=>
+  // previtems.filter((num)=>num!==delitem))
+  // }
+
+ 
   return (
     <>
       <Routes>
@@ -41,6 +59,9 @@ function App() {
           <Route path="/admin" element={<AdminDashboard />} />
         </Route>
       </Routes>
+   
+
+
     </>
   );
 }
