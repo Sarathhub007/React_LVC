@@ -1,39 +1,39 @@
-import { Routes, Route } from "react-router-dom";
-import Home from "./Component/Pages/Home";
-import Login from "./Component/Pages/Login";
-import Register from "./Component/Pages/Register";
-import Dashboard from "./Component/Pages/Dashboard";
-import CourseDetails from "./Component/Pages/CourseDetails";
-import Courses from "./Component/Pages/Courses";
-import Settings from "./Component/Pages/Settings";
-import Profile from "./Component/Pages/Profile";
-import DashboardLayout from "./Component/layouts/DashboardLayout";
-import ProtectedRoute from "./Component/ProtectedRoute";
-import Unauthorized from "./Component/Pages/Unauthorized";
-import RoleRoute from "./Component/RoleRoute";
-import AdminDashboard from "./Component/Pages/AdminDashboard";
+// import { Routes, Route } from "react-router-dom";
+// import Home from "./Component/Pages/Home";
+// import Login from "./Component/Pages/Login";
+// import Register from "./Component/Pages/Register";
+// import Dashboard from "./Component/Pages/Dashboard";
+// import CourseDetails from "./Component/Pages/CourseDetails";
+// import Courses from "./Component/Pages/Courses";
+// import Settings from "./Component/Pages/Settings";
+// import Profile from "./Component/Pages/Profile";
+// import DashboardLayout from "./Component/layouts/DashboardLayout";
+// import ProtectedRoute from "./Component/ProtectedRoute";
+// import Unauthorized from "./Component/Pages/Unauthorized";
+// import RoleRoute from "./Component/RoleRoute";
+// import AdminDashboard from "./Component/Pages/AdminDashboard";
 
-// import { useState } from "react";
+import { useState } from "react";
 // import Profile from "./Pratice/Profile";
 // import MessageForm from "./Pratice/MessageForm";
-// import AddItem from "./Pratice/AddItem";
-// import ItemList from "./Pratice/ItemList";
+import AddItem from "./Pratice/AddItem";
+import ItemList from "./Pratice/ItemList";
 
 function App() {
 
-  // const [items, setItems] = useState([]);
-  // function additems(newitems) {
-  //   setItems((previtems) => [...previtems, newitems]);
-  // }
-  // function deleteItems(delitem){
-  // setItems((previtems)=>
-  // previtems.filter((num)=>num!==delitem))
-  // }
+  const [items, setItems] = useState([]);
+  function additems(newitems) {
+    setItems((previtems) => [...previtems, newitems]);
+  }
+  function deleteItems(delitem){
+  setItems((previtems)=>
+  previtems.filter((num)=>num!==delitem))
+  }
 
  
   return (
     <>
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -58,8 +58,11 @@ function App() {
         <Route element={<RoleRoute allowedRoles={["admin"]} />}>
           <Route path="/admin" element={<AdminDashboard />} />
         </Route>
-      </Routes>
+      </Routes> */}
    
+
+      <AddItem additem={additems} />
+     <ItemList items={items} deleteItems={deleteItems} />
 
 
     </>
